@@ -4,13 +4,12 @@ const { nextISSTimesForMyLocation } = require('./iss_promised');
 // see index.js for printPassTimes 
 // copy it from there, or better yet, moduralize and require it in both files
 
-const { printPassTimes } = require('./index');
 
-// // Call 
-// nextISSTimesForMyLocation()
-//   .then((passTimes) => {
-//     printPassTimes(passTimes);
-//   })
-//   .catch((error) => {
-//     console.log("It didn't work: ", error.message);
-//   });
+// Call 
+nextISSTimesForMyLocation()
+  .then((passTimes) => {
+    const { printPassTimes } = require('./index');
+  })
+  .catch((error) => {
+    console.log("It didn't work: ", error.message);
+  });
